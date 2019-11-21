@@ -43,7 +43,7 @@ class ApplicationController < Sinatra::Base
     binding.pry 
     @article = Article.find(params[:id])
 
-    if @article.update(params)
+    if @article.update(article_params)
       redirect "/articles/#{@article.id}"
     else
       puts "could not update"
