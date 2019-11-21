@@ -42,7 +42,7 @@ class ApplicationController < Sinatra::Base
   patch '/articles/:id' do 
     @article = Article.find(params[:id])
 
-    if @article.update(params[:article])
+    if @article.update(params)
       redirect "/articles/#{@article.id}"
     else
       puts "could not update"
