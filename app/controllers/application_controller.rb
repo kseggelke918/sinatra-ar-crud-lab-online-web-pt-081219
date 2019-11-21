@@ -55,5 +55,13 @@ class ApplicationController < Sinatra::Base
     @article = Article.find(params[:id]) 
   end 
 
-
+  private
+  
+  def article_params 
+    {title: params[:title], content: params[:content]}
+  end 
+  
+  
+  
+  
 end
